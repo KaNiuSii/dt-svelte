@@ -2,11 +2,11 @@
   import { navigate } from 'svelte-routing';
 
   function goToLearn() {
-    navigate('/learn');
+    navigate('dt-svelte/learn');
   }
 
   function goToTest() {
-    navigate('/test');
+    navigate('dt-svelte/test');
   }
 </script>
 

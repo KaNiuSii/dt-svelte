@@ -56,24 +56,26 @@
 		}
 	</style>
 	<nav>
-	<Link to="/" id="nav-link" getProps={({ isPartiallyCurrent }) => {
+	<Link to="dt-svelte/" id="nav-link" getProps={({ isPartiallyCurrent }) => {
 		return isPartiallyCurrent ? { id: "nav-link active" } : { id: "nav-link" }
 		}}>
 		Strona Glowna
 	</Link>
-	<Link to="learn" id="nav-link" getProps={({ isPartiallyCurrent }) => {
+	<Link to="dt-svelte/learn" id="nav-link" getProps={({ isPartiallyCurrent }) => {
 		return isPartiallyCurrent ? { id: "nav-link active" } : { id: "nav-link" }
 		}}>
 		Nauka
 	</Link>
-	<Link to="test" id="nav-link" getProps={({ isPartiallyCurrent }) => {
+	<Link to="dt-svelte/test" id="nav-link" getProps={({ isPartiallyCurrent }) => {
 		return isPartiallyCurrent ? { id: "nav-link active" } : { id: "nav-link" }
 		}}>
 		Test
 	</Link>
 	</nav>
 	<Route path="" component={Home} />
-	<Route path="/learn" component={Learn} />
-	<Route path="/test" component={Test} />
+	<Route path="/" component={Home} />
+	<Route path="dt-svelte/" component={Home} />
+	<Route path="dt-svelte/learn" component={Learn} />
+	<Route path="dt-svelte/test" component={Test} />
 </Router>
   
