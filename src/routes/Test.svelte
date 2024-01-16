@@ -119,16 +119,44 @@
   .tab-content {
     margin-top: 20px;
     padding: 20px;
-    background-color: #fff;
+    background-color: white;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    font-weight: bolder;
   }
 
   p {
     color: black;
   }
+
+  #holder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%; /* Ensure it takes the full width */
+  }
+
   #score {
     color: white;
+  }
+
+  .answer-btn {
+    width: 100%;
+    display: block; /* Makes button take the full width */
+    margin: 10px auto; /* Centers button and adds spacing */
+    padding: 10px 20px; /* Adjust as needed for padding */
+    background-color: #00895c; /* Background color for the button */
+    color: rgb(255, 255, 255); /* Text color */
+    border: 1px solid #000000; /* Border for the button */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Cursor changes to pointer to indicate it's clickable */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+    font-weight: bolder;
+  }
+
+  .answer-btn:hover {
+    background-color: #66db6a; /* Slightly darker background on hover */
   }
 </style>
 
@@ -140,10 +168,10 @@
 
   {#if ready}
     {#if !showScore}
-      <div class="tab-content">
+      <div class="tab-content" id="holder">
         <p>{getQuestions()[currentQuestionIndex].question}</p>
         {#each getQuestions()[currentQuestionIndex].answers as answer}
-          <button on:click={() => selectAnswer(answer)}>{answer}</button>
+          <button class="answer-btn" on:click={() => selectAnswer(answer)}>{answer}</button>
         {/each}
       </div>
     {:else}

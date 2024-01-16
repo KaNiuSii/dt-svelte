@@ -72,7 +72,7 @@
 		Test
 	</Link>
 	</nav>
-	<Route path="/" component={Home} />
+	<Route path="" component={Home} />
 	<Route path="/learn" component={Learn} />
 	<Route path="/test" component={Test} />
 </Router>
